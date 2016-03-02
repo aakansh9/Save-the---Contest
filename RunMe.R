@@ -5,7 +5,7 @@ require(dplyr) # 0.4.3
 require(tidyr) # 0.4.1
 require(xgboost) # 0.4-2
 
-main_path = '~/Projects/Tofu-pred/'
+main_path = '~/Projects/save-the-tofu-contest/'
 setwd(main_path)
 
 source('code/clean.R')

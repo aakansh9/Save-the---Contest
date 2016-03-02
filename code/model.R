@@ -52,19 +52,19 @@ model = xgb.train(params=parameters, Dtrain, nrounds = 1000, nfold = 5, seed=23)
 sample_submit[,5] = exp(predict(model, Dtest))-1
 
 # E
-Dtrain <- xgb.DMatrix(data=data.matrix(train[,7:378]), label=log(1+train$E), missing=NA)
+Dtrain <- xgb.DMatrix(data=data.matrix(Train[,7:378]), label=log(1+Train$E), missing=NA)
 parameters <- list(booster='gbtree', objective = 'reg:linear',
                    eta = 0.01, subsample = 0.9,
                    colsample_bytree = 0.5,
                    max_depth = 2,
                    eval.metric='rmse',
-                   nthread=4) # train-rmse:0.095422+0.001835  test-rmse:0.183760+0.019908
+                   nthread=4) # train-rmse:0.117457+0.003942  test-rmse:0.227078+0.020919
 #xgb.cv(params=parameters, Dtrain, nrounds = 1000, nfold = 5)
 model = xgb.train(params=parameters, Dtrain, nrounds = 1000, nfold = 5, seed=23)
 sample_submit[,6] = exp(predict(model, Dtest))-1
 
 # save
-write.table(sample_submit, 'submissions/first.csv', 
+write.table(sample_submit, 'submissions/sub-1.csv', 
             quote=F, sep = ',', row.names=F, col.names=F)
 
 
