@@ -7,6 +7,6 @@ Contest link: https://deepanalytics.jp/compe/18
 
 ### To Run:
 1. Download the repository.
-2. Set location ('main_path') on repository in RunMe.R
+2. Set location of repository in RunMe.R (variable 'main_path')
 3. Install packages as mentioned in RunMe.R
 4. Run RunMe.R
