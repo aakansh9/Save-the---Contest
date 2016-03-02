@@ -1,5 +1,5 @@
 # save-the-tofu-contest
-https://deepanalytics.jp/compe/18
+Contest link: https://deepanalytics.jp/compe/18
 
 ### Tested on:
 1.  R version 3.1.2 (2014-10-31)
