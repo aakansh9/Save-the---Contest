@@ -4,6 +4,7 @@
 require(dplyr) # 0.4.3
 require(tidyr) # 0.4.1
 require(xgboost) # 0.4-2
+require(caret) # 3.1.3
 
 main_path = '~/Projects/save-the-tofu-contest/'
 setwd(main_path)
