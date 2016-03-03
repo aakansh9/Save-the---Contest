@@ -9,8 +9,10 @@ parameters <- list(booster='gbtree', objective = 'reg:linear',
                    colsample_bytree = 0.5,
                    max_depth = 2,
                    eval.metric='rmse',
-                   nthread=4) # train-rmse:0.115693+0.003421  test-rmse:0.219381+0.020862
-#xgb.cv(params=parameters, Dtrain, nrounds = 1000, nfold = 5)
+                   #min_child_weight = 6,
+                   #scale_pos_weight=0.8,
+                   nthread=4) 
+xgb.cv(params=parameters, Dtrain, nrounds = 955, nfold = 5, seed=23)
 model = xgb.train(params=parameters, Dtrain, nrounds = 955, nfold = 5, seed=23)
 #xgb.importance(names(Train[,7:378]), model=model)
 sample_submit[,2] = exp(predict(model, Dtest))-1
@@ -22,8 +24,8 @@ parameters <- list(booster='gbtree', objective = 'reg:linear',
                    colsample_bytree = 0.5,
                    max_depth = 2,
                    eval.metric='rmse',
-                   nthread=4) # train-rmse:0.087071+0.001089  test-rmse:0.169511+0.024354
-#xgb.cv(params=parameters, Dtrain, nrounds = 1000, nfold = 5)
+                   nthread=4) 
+xgb.cv(params=parameters, Dtrain, nrounds = 1000, nfold = 5, seed=23)
 model = xgb.train(params=parameters, Dtrain, nrounds = 1000, nfold = 5, seed=23)
 sample_submit[,3] = exp(predict(model, Dtest))-1
 
@@ -34,8 +36,8 @@ parameters <- list(booster='gbtree', objective = 'reg:linear',
                    colsample_bytree = 0.5,
                    max_depth = 2,
                    eval.metric='rmse',
-                   nthread=4) # train-rmse:0.151792+0.023071  test-rmse:0.385241+0.231984
-#xgb.cv(params=parameters, Dtrain, nrounds = 1000, nfold = 5)
+                   nthread=4) 
+xgb.cv(params=parameters, Dtrain, nrounds = 1000, nfold = 5, seed=23)
 model = xgb.train(params=parameters, Dtrain, nrounds = 1000, nfold = 5, seed=23)
 sample_submit[,4] = exp(predict(model, Dtest))-1
 
@@ -46,8 +48,8 @@ parameters <- list(booster='gbtree', objective = 'reg:linear',
                    colsample_bytree = 0.5,
                    max_depth = 2,
                    eval.metric='rmse',
-                   nthread=4) # train-rmse:0.095458+0.004299  test-rmse:0.191040+0.020006
-#xgb.cv(params=parameters, Dtrain, nrounds = 1000, nfold = 5)
+                   nthread=4) 
+xgb.cv(params=parameters, Dtrain, nrounds = 1000, nfold = 5, seed=23)
 model = xgb.train(params=parameters, Dtrain, nrounds = 1000, nfold = 5, seed=23)
 sample_submit[,5] = exp(predict(model, Dtest))-1
 
@@ -58,8 +60,8 @@ parameters <- list(booster='gbtree', objective = 'reg:linear',
                    colsample_bytree = 0.5,
                    max_depth = 2,
                    eval.metric='rmse',
-                   nthread=4) # train-rmse:0.117457+0.003942  test-rmse:0.227078+0.020919
-#xgb.cv(params=parameters, Dtrain, nrounds = 1000, nfold = 5)
+                   nthread=4) 
+xgb.cv(params=parameters, Dtrain, nrounds = 1000, nfold = 5, seed=23)
 model = xgb.train(params=parameters, Dtrain, nrounds = 1000, nfold = 5, seed=23)
 sample_submit[,6] = exp(predict(model, Dtest))-1
 
