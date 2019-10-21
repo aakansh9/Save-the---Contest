@@ -1,5 +1,6 @@
-# save-the-tofu-contest
-Contest link: https://deepanalytics.jp/compe/18
+save_the_tofu
+==============
+*ML competition at [Signate](https://signate.jp/competitions/18)*
 
 ### Tested on:
 1.  R version 3.1.2 (2014-10-31)
